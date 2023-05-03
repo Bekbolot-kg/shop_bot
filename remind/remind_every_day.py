@@ -9,7 +9,7 @@ async def start_remind(user_id: int):
     scheduler.add_job(
         send_remind,
         'interval',
-        seconds=10,
+        hours=36,
         args=(user_id,)
     )
 
