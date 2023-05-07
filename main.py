@@ -8,7 +8,6 @@ from handler.cmd_start import cmd_start
 from handler.cmd_products import cmd_products, cb_products
 from aiogram.dispatcher.filters import Text
 from config import dp, scheduler
-from remind.remind_every_day import start_remind
 import logging
 
 async def start_up(_):

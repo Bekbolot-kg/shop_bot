@@ -6,10 +6,16 @@ from random import choice
 async def start_remind(user_id: int):
     """ Добавляет задание в планировщик заданий на отправку напоминаний пользователю. """
 
+    # scheduler.add_job(
+    #     send_remind,
+    #     'interval',
+    #     hours=36,
+    #     args=(user_id,)
+    # )
     scheduler.add_job(
         send_remind,
-        'interval',
-        hours=36,
+        'cron',
+        year=2023, week=1,
         args=(user_id,)
     )
 
@@ -40,3 +46,4 @@ async def send_remind(user_id: int):
 
     except Exception as e:
         print(e)
+
